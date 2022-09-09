@@ -39,9 +39,7 @@ app.get("/about", (req, res, next) => {
 
 // Connect to DataBase
 mongoose
-  .connect(
-    "mongodb+srv://mahmoud:mahmoud@cluster0.vu6jlts.mongodb.net/?retryWrites=true&w=majority"
-  )
+  .connect("ur url")
   .then((result) => {
     console.log("Connected to database");
     app.listen(8000);

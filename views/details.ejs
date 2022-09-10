@@ -1,0 +1,21 @@
+<html lang="en">
+  <%- include("./mainParts/head.ejs") %>
+
+  <body>
+    <%- include("./mainParts/nav.ejs") %>
+
+    <div class="p-3">
+      <h2><%= blog.title %></h2>
+      <p><%= blog.createdAt %></p>
+      <p>
+        <%= blog.snippet %>
+      </p>
+      <p>
+        <%= blog.Description%>
+      </p>
+      <a href="#" class="btn btn-primary">Delete</a>
+      <a href="#" class="btn btn-primary">Edit</a>
+    </div>
+
+    <%- include("./mainParts/closed.ejs") %>
+</html>

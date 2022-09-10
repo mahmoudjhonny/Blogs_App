@@ -5,50 +5,20 @@
     <%- include("./mainParts/nav.ejs") %>
 
     <div class="row gap-3 mt-3 px-5 justify-content-center">
-      <div class="card col-lg-3 col-md-4 col-sm-6">
-        <div class="card-body">
-          <div class="card-title">Blogs</div>
-          <div class="card-text mb-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat ad maxime sequi totam repudiandae qui! Libero perferendis facilis dolor soluta distinctio qui quidem aut et, tempora doloremque voluptatum nemo consectetur!</div>
-          <a href="#" class="btn btn-primary">Details</a>
-        </div>
-      </div>
-      <div class="card col-lg-3 col-md-4 col-sm-6">
-        <div class="card-body">
-          <div class="card-title">Blogs</div>
-          <div class="card-text mb-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat ad maxime sequi totam repudiandae qui! Libero perferendis facilis dolor soluta distinctio qui quidem aut et, tempora doloremque voluptatum nemo consectetur!</div>
-          <a href="#" class="btn btn-primary">Details</a>
-        </div>
-      </div>
-      <div class="card col-lg-3 col-md-4 col-sm-6">
-        <div class="card-body">
-          <div class="card-title">Blogs</div>
-          <div class="card-text mb-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat ad maxime sequi totam repudiandae qui! Libero perferendis facilis dolor soluta distinctio qui quidem aut et, tempora doloremque voluptatum nemo consectetur!</div>
-          <a href="#" class="btn btn-primary">Details</a>
-        </div>
-      </div>
-      <div class="card col-lg-3 col-md-4 col-sm-6">
-        <div class="card-body">
-          <div class="card-title">Blogs</div>
-          <div class="card-text mb-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat ad maxime sequi totam repudiandae qui! Libero perferendis facilis dolor soluta distinctio qui quidem aut et, tempora doloremque voluptatum nemo consectetur!</div>
-          <a href="#" class="btn btn-primary">Details</a>
-        </div>
-      </div>
-      <div class="card col-lg-3 col-md-4 col-sm-6">
-        <div class="card-body">
-          <div class="card-title">Blogs</div>
-          <div class="card-text mb-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat ad maxime sequi totam repudiandae qui! Libero perferendis facilis dolor soluta distinctio qui quidem aut et, tempora doloremque voluptatum nemo consectetur!</div>
-          <a href="#" class="btn btn-primary">Details</a>
-        </div>
-      </div>
-      <div class="card col-lg-3 col-md-4 col-sm-6">
-        <div class="card-body">
-          <div class="card-title">Blogs</div>
-          <div class="card-text mb-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat ad maxime sequi totam repudiandae qui! Libero perferendis facilis dolor soluta distinctio qui quidem aut et, tempora doloremque voluptatum nemo consectetur!</div>
-          <a href="#" class="btn btn-primary">Details</a>
-        </div>
-      </div>
-      </div>
-
+      <% if(result.length > 0){ %>
+        <%result.forEach(blog =>{ %>
+          <div class="card col-lg-3 col-md-4 col-sm-6">
+            <div class="card-body">
+              <div class="card-title"><%=blog.title%></div>
+              <div class="card-text mb-2"><%=blog.snippet%></div>
+              <a href="<%= blog._id %>" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        <% }) %>
+      <% }else{ %>
+        <p class="text-center mt-3 p-2 fs-1">No Blogs To Display It ....</p>
+      <% } %>
+    </div>
 
     <%- include("./mainParts/closed.ejs") %>
 </html>

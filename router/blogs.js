@@ -11,6 +11,12 @@ router.get("/about", blogs_controller.renderAbout);
 
 router.get("/:id", blogs_controller.renderDetails);
 
+router.get("/:id/edit-blog", blogs_controller.renderEdit);
+
 router.post("/add-blog", blogs_controller.addBlogs);
+
+router.post("/delete_blog", blogs_controller.deleteBlog);
+
+router.post("/:id/edit-blog", blogs_controller.editBlog);
 
 module.exports = router;

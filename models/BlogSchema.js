@@ -15,6 +15,11 @@ const blogSchema = new Schema(
       type: String,
       required: true,
     },
+    userId: {
+      type: Schema.Types.ObjectID,
+      ref: "User",
+      required: true,
+    },
   },
   { timestamps: true }
 );

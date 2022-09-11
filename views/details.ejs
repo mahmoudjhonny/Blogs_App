@@ -13,8 +13,11 @@
       <p>
         <%= blog.Description%>
       </p>
-      <a href="#" class="btn btn-primary">Delete</a>
-      <a href="#" class="btn btn-primary">Edit</a>
+      <form action="delete_blog" method="POST">
+        <input type="hidden" value="<%= blog._id %>" name="blogId">
+        <button type="submit" class="btn btn-primary">Delete</button>
+    </form>
+      <a href="<%= blog.id %>/edit-blog" class="btn btn-primary">Edit</a>
     </div>
 
     <%- include("./mainParts/closed.ejs") %>
